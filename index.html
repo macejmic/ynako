@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ynako - Premium Stays in Košice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4a90e2;
+            --primary-dark: #357abd;
+            --secondary: #4ecdc4;
+            --accent: #ffe66d;
+            --dark: #2c3e50;
+            --gray: #7f8c8d;
+            --light-gray: #ecf0f1;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--white);
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 24px;
+            box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 600;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M0 40L40 0h10L0 50V40zm40 40V50l40-40h-10L40 40v40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .hero-link {
+            margin-top: 2rem;
+        }
+
+        .visit-kosice-link {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary);
+            text-decoration: none;
+            padding: 1.2rem 2.5rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            border: 3px solid var(--white);
+        }
+
+        .visit-kosice-link:hover {
+            background: var(--accent);
+            color: var(--dark);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 4rem 0;
+            background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            margin-bottom: 3rem;
+        }
+
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .tag {
+            background: var(--white);
+            color: var(--gray);
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid var(--light-gray);
+            font-size: 1rem;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-color: var(--primary);
+        }
+
+        .tag.active {
+            background: var(--gradient);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+        }
+
+        /* Venues Grid */
+        .venues-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .venue-card {
+            background: var(--white);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .venue-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .venue-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(45deg, var(--accent) 0%, var(--secondary) 50%, var(--primary) 100%);
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-style: italic;
+            position: relative;
+            overflow: hidden;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .venue-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M20 0L0 20h20V0zm0 40L40 20H20v20z'/%3E%3C/g%3E%3C/svg%3E") repeat;
+        }
+
+        .venue-content {
+            padding: 2rem;
+        }
+
+        .venue-header {
+            margin-bottom: 1rem;
+        }
+
+        .venue-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .venue-type {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+        }
+
+        .venue-description {
+            color: var(--gray);
+            margin: 1.5rem 0;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .venue-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .venue-tag {
+            background: var(--light-gray);
+            color: var(--dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .venue-tag:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .venue-tag {
+            background: var(--light-gray);
+            color: var(--dark);
+            padding: 0.3rem 0.7rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .venue-tag:hover {
+            background: var(--secondary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .venue-map-link {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .map-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .map-link:hover {
+            color: var(--primary-dark);
+            transform: translateX(3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-description {
+            color: #bdc3c7;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .footer-bottom {
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .venues-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .filter-tags {
+                gap: 0.8rem;
+            }
+
+            .tag {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .logo-text {
+                font-size: 28px;
+            }
+
+            .logo-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .venue-content {
+                padding: 1.5rem;
+            }
+
+            .filter-tags {
+                gap: 0.5rem;
+            }
+
+            .tag {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">Y</div>
+                <span class="logo-text">Ynako</span>
+            </a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">Welcome to Ynako</h1>
+            <p class="hero-subtitle">Premium Short-Term Stays in Košice</p>
+            <p class="hero-description">Experience the authentic charm of Košice through our handpicked selection of the best local spots. From hidden gems to must-visit places - these are our personal favorites that make our city special.</p>
+            <div class="hero-link">
+                <a href="https://visitkosice.org/en" target="_blank" class="visit-kosice-link">
+                    Looking for more tips? Explore the complete official city guide →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Discover Local Favorites</h2>
+                <p class="section-subtitle">Our handpicked selection of the finest dining and entertainment venues in Košice</p>
+            </div>
+
+            <section class="filter-section">
+                <div class="filter-tags">
+                    <button class="tag active" data-filter="all">All Places</button>
+                    <button class="tag" data-filter="dining">Bars & Restaurants</button>
+                    <button class="tag" data-filter="coffee">Coffee</button>
+                    <button class="tag" data-filter="activities">What to See/Do</button>
+                </div>
+            </section>
+
+            <div class="venues-grid" id="venuesGrid">
+                <!-- Venues will be populated here -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <h3 class="footer-brand">Ynako</h3>
+            <p class="footer-description">Your gateway to authentic Košice experiences. We provide premium short-term accommodations and insider knowledge to make your stay unforgettable.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ynako. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const venues = [
+            {
+                name: "Kino úsmev",
+                type: "Cinema & Bar",
+                description: "An old cinema that renewed its existence a few years ago. Perfect place to watch alternative films or enjoy good beer and food on their terrace. They offer homemade beer and smash burgers in the basement.",
+                category: "dining",
+                tags: ["cinema", "terrace", "craft beer"],
+                image: "images/venues/kino-usmev-1.jpg",
+                mapLink: "https://maps.app.goo.gl/4VQn9LF7G2obiZGq8"
+            },
+            {
+                name: "Tabačka",
+                type: "Cultural Center & Restaurant", 
+                description: "Former tobacco factory transformed into Košice's center of artistic creativity. From concerts to slam poetry, they have their own restaurant and tank beer.",
+                category: "dining",
+                tags: ["culture", "concerts", "tank beer"],
+                image: "images/venues/tabacka.jpg",
+                mapLink: "https://maps.app.goo.gl/M73w3JYgzEisudQ47"
+            },
+            {
+                name: "Emoti",
+                type: "Sharefood Tavern",
+                description: "A sharefood tavern with great food and nice terrace. Traditional dishes prepared in non-traditional ways. Perfect way to experience local cuisine in a pleasant environment. Slightly pricier than surrounding restaurants, but worth it.",
+                category: "dining",
+                tags: ["local cuisine", "terrace", "traditional"],
+                image: "images/venues/emoti.jpg",
+                mapLink: "https://maps.app.goo.gl/Rv9T4DupTCC5ajXF6"
+            },
+            {
+                name: "Žigmundova veža, Dóm svätej Alžbety",
+                type: "Cathedral & Tower",
+                description: "You should definitely visit St. Elisabeth Cathedral (free entry) plus its viewpoint, where you pay a small fee. Climb the stairs to the viewpoint where you can see all of Košice.",
+                category: "activities",
+                tags: ["cathedral", "viewpoint", "free entry"],
+                image: "images/venues/cathedral.jpg",
+                mapLink: "https://maps.app.goo.gl/oRBr7ZKoEiNBApor5"
+            },
+            {
+                name: "Východoslovenská galéria",
+                type: "Art Gallery",
+                description: "East Slovak Gallery is a cultural institution focusing on art collection activities in Eastern Slovakia. Founded in 1951 as the first regional gallery in Slovakia, located in Košice. Its main goal is presenting and documenting artistic life in the Eastern Slovak region.",
+                category: "activities",
+                tags: ["art", "gallery", "culture"],
+                image: "images/venues/galerija.jpg",
+                mapLink: "https://maps.app.goo.gl/6uFEDNJskckdURt4A"
+            },
+            {
+                name: "Camelot",
+                type: "Medieval Restaurant & Pub",
+                description: "If you're in the mood for good beer and very traditional food, this is the right place. They have a beautiful terrace with a view of the church.",
+                category: "dining",
+                tags: ["medieval", "terrace", "traditional food"],
+                image: "images/venues/camelot.jpg",
+                mapLink: "https://maps.app.goo.gl/gBi6bGtXoRX8qtvc9"
+            },
+            {
+                name: "MarathonPoint",
+                type: "Coffee & Museum",
+                description: "The city of Košice opened a municipal café where you can enjoy good espresso, nitro cold brew, and explore interesting exhibits from the world of the Košice marathon.",
+                category: "coffee",
+                tags: ["espresso", "nitro cold brew", "marathon history"],
+                image: "images/venues/marathon-point.jpg",
+                mapLink: "https://maps.app.goo.gl/qd1Wn8t31y7RA53e8"
+            },
+            {
+                name: "Melody",
+                type: "Coffee Roastery",
+                description: "Local specialty coffee roastery focusing on high-quality beans and precise brewing methods. They excel in espresso and pour-over techniques like V60, offering a carefully curated selection of single-origin coffees. Popular among coffee enthusiasts and locals who appreciate expertly crafted drinks in a cozy atmosphere.",
+                category: "coffee",
+                tags: ["specialty coffee", "V60", "single-origin"],
+                image: "images/venues/melody.jpg",
+                mapLink: "https://maps.app.goo.gl/VysgzER4zwpN7gAc7"
+            },
+            {
+                name: "Pokhoi",
+                type: "Craft Beer Bar",
+                description: "A true hidden gem tucked away in a charming courtyard between Hlavná and Bočná streets. This cozy craft beer bar features around eight rotating taps with excellent local and international craft beers. The magical ivy-covered terrace creates a perfect atmosphere with atmospheric lighting that makes you feel like you're on vacation. Located just a minute's walk from the cathedral, it's worth seeking out this secret spot that locals love. Cash only, dog-friendly.",
+                category: "dining",
+                tags: ["craft beer", "hidden gem", "terrace"],
+                image: "images/venues/pokhoi.jpg",
+                mapLink: "https://maps.app.goo.gl/23QxYTofrfx87tb48"
+            },
+            {
+                name: "Rosto",
+                type: "Steak Restaurant",
+                description: "Premium steak restaurant known for exceptional quality meat and expert preparation. Features perfectly grilled steaks with premium cuts prepared on a lava grill. The elegant atmosphere and professional service make it ideal for special occasions. Excellent wine selection complements their signature steaks.",
+                category: "dining",
+                tags: ["steaks", "quality meat", "fine dining"],
+                image: "images/venues/rosto.jpg",
+                mapLink: "https://maps.app.goo.gl/cpP2Gaa56PjUnFW97"
+            },
+            {
+                name: "Mogu-Mogu",
+                type: "Japanese Restaurant",
+                description: "Authentic Japanese restaurant featuring the best ramen in Košice, prepared by a skilled Japanese chef. This popular spot serves traditional ramen bowls with rich, flavorful broths and fresh ingredients. Due to high demand and limited daily portions, they frequently sell out by early afternoon, so arrive early for lunch to secure your bowl of this exceptional ramen.",
+                category: "dining",
+                tags: ["ramen", "japanese cuisine", "authentic"],
+                image: "images/venues/mogu-mogu.jpg",
+                mapLink: "https://maps.app.goo.gl/PTG4tEbB2pV6dc1z7"
+            },
+            {
+                name: "Doraz coffee Dominikánske",
+                type: "Coffee Roastery",
+                description: "Very nice café with a pleasant terrace. They roast their own coffee. Beautiful view of the church and local market.",
+                category: "coffee",
+                tags: ["own roasted coffee", "terrace", "church view"],
+                image: "images/venues/doraz-coffee.jpg",
+                mapLink: "https://maps.app.goo.gl/4NxKRMjPHm2ozv2S7"
+            },
+            {
+                name: "Trh dominikánske námestie",
+                type: "Local Market",
+                description: "Local market, open daily (ideally on weekends), until 12:00. Local fruits, flowers and vegetables.",
+                category: "activities",
+                tags: ["local market", "fresh produce", "weekends"],
+                image: "images/venues/dominican-market.jpg",
+                mapLink: "https://maps.app.goo.gl/jErkYX6Jy5isRMPJ7"
+            },
+            {
+                name: "Botanická záhrada Košice",
+                type: "Botanical Garden",
+                description: "Slovakia's largest botanical garden with 30 hectares of diverse plant collections. Features beautiful outdoor gardens, greenhouses with exotic plants, and one of Central Europe's largest cactus collections. Perfect escape from the city for nature lovers and families. Open daily 9:00-15:00.",
+                category: "activities",
+                tags: ["nature", "plants", "peaceful", "family-friendly"],
+                image: "images/venues/botanical-garden.jpg",
+                mapLink: "https://maps.app.goo.gl/vsg5YmpWgaVo6Fm99"
+            },
+            {
+                name: "Bazaar Bar",
+                type: "Cocktail Bar",
+                description: "Stylish cocktail bar with exotic atmosphere and expertly crafted drinks. Features creative cocktail menu with both classic and innovative mixology creations. The unique interior design and professional bartenders create a sophisticated drinking experience. Perfect for evening drinks and special occasions in an elegant setting.",
+                category: "dining",
+                tags: ["cocktails", "elegant", "evening", "mixology"],
+                image: "images/venues/bazaar-bar.jpg",
+                mapLink: "https://maps.app.goo.gl/kX6xmjiDiYER28YA7"
+            },
+            {
+                name: "Východoslovenské múzeum v Košiciach",
+                type: "Regional Museum",
+                description: "The largest regional museum in Slovakia, showcasing the rich history and cultural heritage of Eastern Slovakia. Features extensive archaeological, historical, and ethnographic collections spanning from prehistoric times to the present. Houses important artifacts including medieval treasures, folk art, and regional crafts. Perfect for history enthusiasts and anyone interested in Slovak culture and traditions.",
+                category: "activities",
+                tags: ["history", "culture", "museum", "heritage"],
+                image: "images/venues/vychoslovenske-muzeum.jpg",
+                mapLink: "https://maps.app.goo.gl/apxwQtjqzw2rBAGu6"
+            },
+            {
+                name: "Contessa Cassovia",
+                type: "Fine Dining Restaurant",
+                description: "Elegant fine dining restaurant offering sophisticated cuisine and exceptional service in a refined atmosphere. Features carefully crafted dishes with modern presentation and premium ingredients. The stylish interior and professional staff create an upscale dining experience perfect for special occasions, business dinners, and romantic evenings. Known for their attention to detail and culinary excellence.",
+                category: "dining",
+                tags: ["fine dining", "elegant", "special occasions", "premium"],
+                image: "images/venues/contessa-cassovia.jpg",
+                mapLink: "https://maps.app.goo.gl/iKTgbh6qw4dhNYZx6"
+            },
+            {
+                name: "El Nacional - Represents Cuba",
+                type: "Cuban Bar & Restaurant",
+                description: "Authentic Cuban bar bringing tropical vibes to Košice with excellent lunch menus during the day and vibrant nightlife with dancing and expertly crafted cocktails in the evening. Features traditional Cuban atmosphere, Latin music, and signature drinks that transport you to Havana. Perfect spot to experience Caribbean culture with great food, mojitos, and salsa dancing.",
+                category: "dining",
+                tags: ["cuban", "dancing", "cocktails", "latin music"],
+                image: "images/venues/el-nacional.jpg",
+                mapLink: "https://maps.app.goo.gl/PRPPt8bDGrBRTBxN8"
+            },
+            {
+                name: "Café Na Peróne",
+                type: "Theater Café",
+                description: "Unique café located within the innovative Divadlo na perón (Theater on the Platform) in a converted railway station. This creative cultural space combines excellent coffee with avant-garde theater performances and artistic atmosphere. Perfect spot for culture enthusiasts to enjoy quality drinks while surrounded by contemporary art and theater. The venue's railway heritage creates a distinctive industrial-chic ambiance.",
+                category: "coffee",
+                tags: ["theater", "culture", "railway heritage", "artistic"],
+                image: "images/venues/cafe-na-perone.jpg",
+                mapLink: "https://maps.app.goo.gl/cn8SU26mBeNywmQC9"
+            }
+        ];
+
+        function renderVenues(venuesToShow = venues) {
+            const grid = document.getElementById('venuesGrid');
+            grid.innerHTML = venuesToShow.map(venue => `
+                <div class="venue-card" data-category="${venue.category}">
+                    <div class="venue-image" style="background-image: url('${venue.image}'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="venue-content">
+                        <div class="venue-header">
+                            <div>
+                                <h3 class="venue-name">${venue.name}</h3>
+                            </div>
+                            <span class="venue-type">${venue.type}</span>
+                        </div>
+                        <p class="venue-description">${venue.description}</p>
+                        <div class="venue-tags">
+                            ${venue.tags.map(tag => `<span class="venue-tag">#${tag}</span>`).join('')}
+                        </div>
+                        ${venue.mapLink ? `<div class="venue-map-link">
+                            <a href="${venue.mapLink}" target="_blank" class="map-link">📍 View on Google Maps</a>
+                        </div>` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterVenues(category) {
+            const filteredVenues = category === 'all' 
+                ? venues 
+                : venues.filter(venue => venue.category === category);
+            renderVenues(filteredVenues);
+        }
+
+        // Filter functionality
+        document.querySelectorAll('.tag').forEach(tag => {
+            tag.addEventListener('click', () => {
+                document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
+                tag.classList.add('active');
+                filterVenues(tag.dataset.filter);
+            });
+        });
+
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderVenues();
+        });
+    </script>
+</body>
+</html>
